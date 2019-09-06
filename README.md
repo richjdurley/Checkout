@@ -1,40 +1,28 @@
-# Coding-Kata
-Coding Kata Examples
+# TDD Kata
 
-## A MultiBuy Checkout
+## Acme MultiBuy Checkout Kata
 based on Kata @ http://codekata.com/kata/kata09-back-to-the-checkout/
 
-Given the example stub.
+- Think of a self service `CHECKOUT` that allows a customer to `SCAN` each `ITEM` to their `BASKET` in turn and `PRINT` a `RECEIPT` for the items they have purchased.  
+- The receipt shows each `ITEM` and it's `UNIT PRICE`.  
+- Additionally Acme has a `SPECIAL PRICING RULE` that allows customers to receive a `DISCOUNT` when purchasing multiples of the same item (e.g. 3 for 130). 
+- These `MultiBuy Savings` are shown in summary at the bottom of the receipt. 
+- Finally the `TOTAL` of the `BASKET` minus multibuy savings are printed at the end of the receipt.
+
+An example stub for the checkout is provided.
 
 ```java
 public interface Checkout {
-  void scan(ItemID itemId);
+  void scan(String item);
   void printReceipt();
 }
 ```
 ### Required Behaviour
 
-- Implement a simple checkout process that allows items to be scanned and a receipt printed
-
-- Implement unit pricing and multi-buy special pricing rules using the pricing table below.
-
-```
-  Item   Unit      Special
-         Price     Price
-  --------------------------
-    A     50       3 for 130
-    B     30       2 for 45
-    C     20
-    D     15
-```
-
-- Assume each item is scanned through the `checkout` process in turn
-
-- Print an example text receipt in a format as follows
-
+- Implement a simple checkout process that allows items to be scanned (one by one) to a customers checkout basket and a receipt printed as per the below example.
 
 ```   
-  Item              Price
+  Item               Price
   ------------------------
     A                   50
     A                   50
@@ -50,13 +38,33 @@ public interface Checkout {
   ------------------------         
 ```
 
+- Implement item unit pricing and multi-buy special pricing rules using the pricing table below.
+
+```
+  Item   Unit      Special
+         Price     Price
+  --------------------------
+    A     50       3 for 130
+    B     30       2 for 45
+    C     20
+    D     15
+```
+
+- Assume each item is scanned through the `checkout` in turn
+- Assume the customer payment process is out of scope
+
 ### Developer rules
 - Must use a strict TDD process
 - Must not use abbreviations
 - Must apply SOLID principles
-- Should implement using a CQRS / Event sourcing pattern
-- Must keep all objects small, highly cohesive and isolated
+- Must implement a Event sourcing pattern
 - Must use dependency inversion
-- Should use objects in preference to primitives (e.g. use an Amount object rather than double)
 - Should use lamda programming style where appropriate
 
+### Guidence
+- Think about where to begin ? with the Receipt ? or with the Item and Pricing rules ? or Checkout and Basket ? Explain your choice?
+- What are the major entities ?
+- In which entity could a simple Event sourcing pattern be implemented ?
+- What acceptance tests do you need to write ?
+- Which behaviours do you need to test ?
+- Do you need to use Mocking ?
