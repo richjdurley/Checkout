@@ -7,7 +7,7 @@ based on Kata @ http://codekata.com/kata/kata09-back-to-the-checkout/
 - The receipt shows each `ITEM` and it's `UNIT PRICE`.  
 - Additionally Acme has a `SPECIAL PRICING RULE` that allows customers to receive a `DISCOUNT` when purchasing multiples of the same item (e.g. 3 for 130). 
 - These `MultiBuy Savings` are shown in summary at the bottom of the receipt. 
-- Finally the `TOTAL` of the `BASKET` minus multibuy savings are printed at the end of the receipt.
+- Finally the `TOTAL` of the `BASKET` minus multibuy savings is printed at the end of the receipt.
 
 An example stub for the checkout is provided.
 
