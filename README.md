@@ -57,7 +57,7 @@ public interface Checkout {
 - Must use a strict TDD process
 - Must not use abbreviations
 - Must apply SOLID principles
-- Must implement a Event sourcing pattern
+- Must implement an Event sourcing pattern
 - Must use dependency inversion
 - Should use lamda programming style where appropriate
 
