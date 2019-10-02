@@ -19,7 +19,9 @@ public interface Checkout {
 ```
 ### Required Behaviour
 
-- Implement a simple checkout process that allows items to be scanned (one by one) to a customers checkout basket and a receipt printed as per the below example.
+- Implement a simple checkout process that allows items to be scanned (one by one) to a customers checkout basket and a receipt printed as per the below example.  
+
+- For the kata the receipt can be printed using ``print`` methods of ``java.io.PrintWriter`` and passed as a dependency to the receipt printer.
 
 ```   
   Item               Price
@@ -52,6 +54,7 @@ public interface Checkout {
 
 - Assume each item is scanned through the `checkout` in turn
 - Assume the customer payment process is out of scope
+- Assume that all items scanned will have a price
 
 ### Developer rules
 - Must use a strict TDD process
@@ -62,8 +65,11 @@ public interface Checkout {
 - Should use lamda programming style where appropriate
 
 ### Guidence
-- Think about where to begin ? with the Receipt ? or with the Item and Pricing rules ? or Checkout and Basket ? Explain your choice?
-- What are the major entities ?
+- Begin with writing
+  1) Checkout scan functionality 
+  2) Then adding basic receipt printing 
+  3) finally adding the special pricing rules and multibuy receipt printing
+- What are the major entities / what design do you have in mind
 - In which entity could a simple Event sourcing pattern be implemented ?
 - What acceptance tests do you need to write ?
 - Which behaviours do you need to test ?
