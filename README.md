@@ -36,7 +36,7 @@ public interface Checkout {
   ------------------------
     A   3-for-130      -20
   
-  TOTAL                162
+  TOTAL                165
   ------------------------         
 ```
 
