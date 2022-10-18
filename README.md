@@ -35,7 +35,7 @@ public interface Checkout {
   MultiBuy Savings
   ------------------------
     A   3-for-130      -20
-  
+    
   TOTAL                165
   ------------------------         
 ```
